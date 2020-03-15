@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class B{
+    public static void main(String args[]){
+        int lightspeed;
+        long days;
+        long second;
+        long distance;
+        lightspeed = 186000;
+        Scanner sc = new Scanner(System.in);
+        days = sc.nextLong();
+        second = days * 24 * 60 * 60 ;
+        distance = lightspeed * second;
+        System.out.println(distance);
+    }
+}
