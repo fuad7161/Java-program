@@ -1,0 +1,44 @@
+package com.company;
+
+import javax.swing.plaf.synth.SynthScrollPaneUI;
+
+// Creating 2nd thread....
+class NewThread implements Runnable{
+    Thread t1;
+    NewThread(){
+        //Create a new , second thread.
+        t1 = new Thread(this, "Demo Thread");
+        System.out.println("Child thread: "+t1);
+        t1.start();
+    }
+
+    //this is the entry point for the second thread
+    public void run(){
+        try{
+            for(int i=5;i>0;i--){
+                System.out.println("Child Thread: "+i);
+                Thread.sleep(500);
+            }
+        }catch (InterruptedException e){
+            System.out.println("Child interrupted.");
+        }
+        System.out.println("Exiting child Thread.");
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) throws Exception{
+	// write your code here
+        new NewThread();
+        try{
+            for(int i=5;i>0;i--){
+                System.out.println("Main THread: "+i);
+                Thread.sleep(1000);
+            }
+        }catch (InterruptedException e){
+            System.out.println("Main thread is Interruped.");
+        }
+        System.out.println("Main thread exiting.");
+    }
+}
