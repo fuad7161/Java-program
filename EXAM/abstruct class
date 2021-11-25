@@ -1,0 +1,21 @@
+package com.company;
+abstract class Fuad{
+    abstract void f();
+}
+
+abstract class Masud extends Fuad{
+    void f(){
+        System.out.println("I am fuad.");
+    }
+    abstract void ff();
+}
+class AA extends Masud{
+    void ff(){
+        System.out.println("I am masud.");
+    }
+}
+public class Test {
+    public static void main(String[] args) {
+
+    }
+}
