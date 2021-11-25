@@ -1,0 +1,28 @@
+package com.company;
+
+import java.util.Base64;
+
+class Operation{
+    int squre(int n){
+        return n*n;
+    }
+}
+
+class Circle{
+    Operation op;
+    double pi = 3.14;
+    double area(int radius){
+        op = new Operation();
+        int rsqure = op.squre(radius);
+        return pi*rsqure;
+    }
+}
+public class Main{
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        System.out.println(c.area(12));
+        int n;
+        n = 10;
+
+    }
+}
