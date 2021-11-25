@@ -1,0 +1,37 @@
+package com.company;
+
+import java.util.Base64;
+interface A{
+    void a();
+    void b();
+}
+
+interface B extends A{
+    void c();
+    void d();
+}
+
+class C implements B{
+    public void a() {
+        System.out.println("I am a");
+    }
+    public void b() {
+        System.out.println("I am b");
+    }
+    public void c() {
+        System.out.println("I am c");
+    }
+    public void d() {
+        System.out.println("I am d");
+    }
+}
+
+public class Main{
+    public static void main(String[] args) {
+        C tem = new C();
+        tem.a();
+        tem.b();
+        tem.c();
+        tem.d();
+    }
+}
