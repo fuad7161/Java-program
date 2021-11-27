@@ -1,0 +1,26 @@
+package com.company;
+
+class Demo{
+    Demo(){
+        this(80,90);
+    }
+    Demo(int x,int y){
+        System.out.println("parameterize");
+    }
+}
+
+class Protitype extends Demo{
+    Protitype(){
+        this("java" , "Python");
+    }
+    Protitype(String st1, String st2){
+        super();
+    }
+}
+
+public class Test{
+
+    public static void main(String[] args) {
+        Protitype t = new Protitype();
+    }
+}
