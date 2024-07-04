@@ -16,7 +16,7 @@ public class Main {
         System.out.println(jsonRequest);
         HttpRequest postRequest = HttpRequest.newBuilder()
                 .uri(new URI("https://api.assemblyai.com/v2/transcript"))
-                .header("Authorization", "6c08f6a731f14029b96ab8fbd3ea37bf")
+                .header("Authorization", new TokenKey().getToken())
                 .POST(HttpRequest.BodyPublishers.ofString(jsonRequest))
                 .build();
         HttpClient httpClient = HttpClient.newHttpClient();
@@ -27,7 +27,7 @@ public class Main {
 
         HttpRequest getRequest = HttpRequest.newBuilder()
                 .uri(new URI("https://api.assemblyai.com/v2/transcript/"+transcript.getId()))
-                .header("Authorization", "6c08f6a731f14029b96ab8fbd3ea37bf")
+                .header("Authorization", new TokenKey().getToken())
                 .build();
         while (true){
             HttpResponse<String> getResponse = httpClient.send(getRequest , HttpResponse.BodyHandlers.ofString());
